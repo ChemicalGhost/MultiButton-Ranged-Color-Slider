@@ -10,7 +10,7 @@ const SideMenu = (props) => {
     <>
       <div className={styles.divSideMenu}>
         <div className={styles.colorSlider}>
-          <SliderUI length={500}/>
+          <SliderUI length={400}/>
         </div>
       </div>
     </>

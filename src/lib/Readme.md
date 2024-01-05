@@ -1,12 +1,11 @@
+Color Slider Component Manual<br/>
+Last Manual Update: 5th January,2024
+
 # Installation
 
 1. Copy the following files to your prefered directory/folder:
 
-   - slider.js
-
-   - slider.module.css
-
-   - sliderStore.js
+   - slider.js (That's all you really need)
 
    - ReadMe(Installation and Use).txt (just in case you forget or get lost)
      or you could just copy the whole folder for convenience sake.(Your call)

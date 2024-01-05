@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useCallback } from "react";
-import styles from "./slider.module.css";
 import gsap from "gsap";
 import { create } from "zustand";
-
 
 const sliderStore = create((set) => ({
   btnColor: null,
   btnValue: null,
-  btnArray:[]
+  btnArray: [],
 }));
 
 function debounce(func, timeout = 200) {
@@ -20,6 +18,13 @@ function debounce(func, timeout = 200) {
 
     console.log(timer);
   };
+}
+
+function buttonOnHoverColorChange(e) {
+  e.target.style.backgroundColor = "rgb(173, 114, 4)";
+}
+function buttonEndHoverColorChange(e) {
+  e.target.style.backgroundColor = "rgb(243, 159, 4)";
 }
 
 const SliderUI = (props) => {
@@ -35,7 +40,7 @@ const SliderUI = (props) => {
     function getRandomNumber(min, max) {
       return Math.random() * (max - min) + min;
     }
-    const toolTipDiv = document.querySelector(`.${styles.tooltip}`);
+    const toolTipDiv = document.querySelector(`.tooltip`);
     const toolTipCss = toolTipDiv.style;
     console.log(toolTipDiv);
 
@@ -494,14 +499,14 @@ const SliderUI = (props) => {
 
     const slider = new Slider(props.length);
 
-    const addButtonGUI = document.querySelector(`.${styles.btnAdd}`);
+    const addButtonGUI = document.querySelector(`.btnAdd`);
     addButtonGUI.onclick = () => {
       slider.addButton();
       slider.updateBar();
       slider.updateButton();
     };
 
-    const removeButtonGUI = document.querySelector(`.${styles.btnRemove}`);
+    const removeButtonGUI = document.querySelector(`.btnRemove`);
     removeButtonGUI.onclick = function click() {
       slider.drawBar();
       slider.removeButton();
@@ -553,24 +558,73 @@ const SliderUI = (props) => {
 
   return (
     <>
-      <div className={styles.slider}>
-        <canvas className={styles.cnvBody} ref={canvasRef} {...props}>
-          <div className={styles.tooltip}></div>
+      <div
+        className={"slider"}
+        style={{
+          msUserSelect: "none",
+          MozUserSelect: "none",
+          display: "flex",
+
+          border: 4,
+          borderStyle: "solid",
+          borderColor: "rgb(29, 143, 156)",
+          width: "fit-content",
+          padding: 0,
+          margin: 0,
+          alignItems: "center",
+        }}
+      >
+        <canvas
+          className={"cnvBody"}
+          ref={canvasRef}
+          {...props}
+          style={{
+            margin: 0,
+            padding: 0,
+          }}
+        >
+          <div className={"tooltip"}></div>
         </canvas>
-        <button className={styles.btnAdd}>+</button>
-        <button 
-        // style={{
-        //     margin: 1,
-        //     textAlign: center,
-        //     padding: 0,
-        //     color: white,
-        //     backgroundColor: rgb(243, 159, 4),
-        //     width: 20,
-        //     height: 25,
-        //     borderStyle: 1,
-        //     borderRadius: 7,
-        //   }} 
-          className={styles.btnRemove}>-</button>
+        <button
+          className={"btnAdd"}
+          style={{
+            margin: 1,
+            textAlign: "center",
+            padding: 2,
+            fontWeight: "bold",
+            color: " white",
+            backgroundColor: "rgb(243, 159, 4)",
+            border: 2,
+            width: 20,
+            height: 25,
+            borderStyle: "solid",
+            borderRadius: 7,
+          }}
+          onMouseOver={buttonOnHoverColorChange}
+          onMouseOut={buttonEndHoverColorChange}
+        >
+          +
+        </button>
+        <button
+          className={"btnRemove"}
+          style={{
+            margin: 1,
+            textAlign: "center",
+            padding: 0,
+            fontWeight: "bold",
+            color: " white",
+            backgroundColor: "rgb(243, 159, 4)",
+            border: 2,
+            width: 20,
+            height: 25,
+            borderStyle: "solid",
+            borderRadius: 7,
+          }}
+          onMouseOver={buttonOnHoverColorChange}
+          onMouseOut={buttonEndHoverColorChange}
+        >
+          -
+        </button>
       </div>
     </>
   );
