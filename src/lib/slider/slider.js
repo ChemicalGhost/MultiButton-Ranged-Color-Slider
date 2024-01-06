@@ -2,12 +2,15 @@ import React, { useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { create } from "zustand";
 
+//#region sliderStore contains all the values and variables being used in the slider 
 const sliderStore = create((set) => ({
   btnColor: null,
   btnValue: null,
   btnArray: [],
 }));
+//#endregion
 
+//#region This function prevents any function from being called multiple times within a split sec
 function debounce(func, timeout = 200) {
   let timer;
   return (...args) => {
@@ -19,13 +22,19 @@ function debounce(func, timeout = 200) {
     console.log(timer);
   };
 }
+//#endregion
 
+//#region These functions are called on event trigger for the add & remove buttons (see lines 609 and 629)
 function buttonOnHoverColorChange(e) {
   e.target.style.backgroundColor = "rgb(173, 114, 4)";
 }
 function buttonEndHoverColorChange(e) {
   e.target.style.backgroundColor = "rgb(243, 159, 4)";
 }
+//#endregion
+
+
+//#region
 
 const SliderUI = (props) => {
   const canvasRef = useRef(null);
@@ -565,9 +574,9 @@ const SliderUI = (props) => {
           MozUserSelect: "none",
           display: "flex",
 
-          border: 4,
+          // border: 4,
           borderStyle: "solid",
-          borderColor: "rgb(29, 143, 156)",
+          // borderColor: "rgb(29, 143, 156)",
           width: "fit-content",
           padding: 0,
           margin: 0,
@@ -629,5 +638,5 @@ const SliderUI = (props) => {
     </>
   );
 };
-
+//#endregion
 export default SliderUI;
