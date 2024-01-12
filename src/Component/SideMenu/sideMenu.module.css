@@ -1,0 +1,55 @@
+.main {
+    display: flex;
+    /* border: 1px solid rgb(61, 39, 39);   */
+    flex-direction: column;
+    justify-content:center;
+    align-items:end;
+    /* padding: 2rem; */
+    min-height: 100vh;
+  }
+  .divSideMenu {
+    display: flex;
+    /* border: 3px solid rgb(255, 255, 255); */
+    background: linear-gradient(to bottom, rgba(6, 91, 76, 0.819),rgba(0, 0, 0, 0.865),rgba(0, 0, 0, 0.865), rgba(0, 0, 0, 0.865));
+    flex-direction: column;
+    justify-content:baseline;
+    align-items: center;
+    padding: 2px; 
+    margin: 10px;
+    min-height: 450px;
+    max-width: fit-content;
+    min-width: 270px;
+    border-radius: 4%
+  }
+  
+
+  .colorSlider{
+    border: 1px solid rgb(213, 26, 26); 
+    min-width: 80%;
+    min-height: 100px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+  }
+  .colorBox{
+    border: 3px solid rgb(193, 192, 192); 
+    min-width: 60%;
+    height: fit-content;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:end;
+   
+  
+  }
+  #colorText{
+    border: 3px solid rgb(94, 95, 95); 
+    
+    min-width: 25%;
+    height: 30px;
+    
+  }
+  
