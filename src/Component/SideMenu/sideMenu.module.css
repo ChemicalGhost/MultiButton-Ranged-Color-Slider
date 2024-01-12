@@ -10,7 +10,7 @@
   .divSideMenu {
     display: flex;
     /* border: 3px solid rgb(255, 255, 255); */
-    background: linear-gradient(to bottom, rgba(6, 91, 76, 0.819),rgba(0, 0, 0, 0.865),rgba(0, 0, 0, 0.865), rgba(0, 0, 0, 0.865));
+    background: linear-gradient(to bottom, rgba(246, 99, 8, 0.819),rgba(0, 0, 0, 0.865),rgba(0, 0, 0, 0.865), rgba(0, 0, 0, 0.865));
     flex-direction: column;
     justify-content:baseline;
     align-items: center;
